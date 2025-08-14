@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PromocaoService } from 'src/app/core/services/promocao.service';
+import { Promocao } from 'src/app/core/types/types';
+
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,18 @@ import { PromocaoService } from 'src/app/core/services/promocao.service';
 })
 export class HomeComponent implements OnInit {
 
+  promocoes: Promocao[] = [];
+
 
   constructor( 
     private promocaoService: PromocaoService
   ) {}
 
   ngOnInit(): void {
-    this.promocaoService.listarPromocoes().subscribe (resposta  => {
-      console.log(resposta);
+    this.promocaoService.listarPromocoes().subscribe ( {
+      next: (res) => this.promocoes = res,
+      error: (err) => console.error('Erro ao listar promoções:', err)   
     })
 
-    this.promocaoService.listarEstados().subscribe (resposta => {
-      console.log(resposta);
-    });
-  }
+}
 }
