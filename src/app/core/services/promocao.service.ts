@@ -21,8 +21,4 @@ export class PromocaoService {
     return this.http.get<Promocao[]>(`${this.apiUrl}/promocoes`);
   }
 
-  listarEstados(): Observable<Promocao[]> {
-    return this.http.get<Promocao[]>(`${this.apiUrl}/estados`);
-  }
-
 }

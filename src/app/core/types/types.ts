@@ -5,7 +5,7 @@ export interface Promocao {
     preco: number;
 }
 
-export interface Estado {
+export interface UnidadeFederativa {
     id: number;
     nome: string;
     sigla: string;

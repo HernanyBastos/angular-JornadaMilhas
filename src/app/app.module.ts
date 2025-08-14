@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  HttpClientModule } from '@angular/common/http';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 //Componentes criados 
@@ -21,7 +22,7 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
 
 
 // Material Angular
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -32,6 +33,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 
 
 
@@ -48,7 +51,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     CardDepoimentoComponent,
     FormBuscaComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    DropdownUfComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
