@@ -1,23 +1,36 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatChipSelectionChange } from '@angular/material/chips';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from 'src/app/shared/modal/modal.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormBuscarService {
+  public formBusca: FormGroup;
 
-  formBusca: FormGroup;
-
-  constructor() { 
-
+  constructor(private dialog: MatDialog,) {
     this.formBusca = new FormGroup({
-      // Define os controles do formulário aqui, por exemplo:
       somenteIda: new FormControl(false),
-      // destino: new FormControl(''),
-      // precoMinimo: new FormControl(''),
-      // precoMaximo: new FormControl(''),
-      // dataIda: new FormControl(''),
-      // dataVolta: new FormControl('')
+      tipo: new FormControl('Executiva'),
     });
   }
+  
+  alterarTipo(evento: MatChipSelectionChange, tipo: string) {
+    if (evento.selected) {
+      this.formBusca.patchValue({
+        tipo
+      }),
+      console.log("Deu certo!")
+    }
+  }
+      openDialog() {
+      this.dialog.open(ModalComponent, {
+        width: '50%'
+      })
+    }
+
 }
+
+

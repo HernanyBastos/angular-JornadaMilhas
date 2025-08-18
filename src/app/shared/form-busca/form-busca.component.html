@@ -15,10 +15,24 @@
         </mat-button-toggle>
       </mat-button-toggle-group>
 
+      <!--
       <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagens">
         <mat-chip-option selected>1 adulto</mat-chip-option>
         <mat-chip-option>Econômica</mat-chip-option>
       </mat-chip-listbox>
+      -->
+
+      <mat-chip (click)="formBuscarService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> 1 Adulto
+        </div>
+      </mat-chip>
+      <mat-chip (click)="formBuscarService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> Econômica
+        </div>
+      </mat-chip>
+
 
     </div>
     <div class="flex-container">
@@ -31,7 +45,7 @@
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field> --->
       <app-dropdown-uf label="Origem" iconePrefixo="flight_takeoff"></app-dropdown-uf>
-      
+
       <button mat-icon-button>
         <mat-icon>sync_alt</mat-icon>
       </button>

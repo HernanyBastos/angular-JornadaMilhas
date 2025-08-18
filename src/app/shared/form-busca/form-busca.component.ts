@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
 import { FormBuscarService } from 'src/app/core/services/form-buscar.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -16,13 +14,7 @@ form = new FormGroup({
 });
 
   constructor(
-    public dialog: MatDialog,
     public formBuscarService: FormBuscarService
   ) { }
 
-  openDialog() {
-    this.dialog.open(ModalComponent, {
-      width: '50%'
-    })
-  }
 }
