@@ -14,12 +14,15 @@
             <form [formGroup]="loginForm">
                 <mat-card-content>
                     <mat-form-field class="input-container" appearance="outline">
-                        <mat-label>Digite seu e-mail ou CPF</mat-label>
+                        <mat-label>Digite seu e-mail</mat-label>
                         <input 
                         type="email" 
                         autocomplete="email"
                         formControlName="email" 
                         matInput placeholder="E-mail ou CPF">
+
+                        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Preenchimento do E-mail obrigatório</mat-error>
+                        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Preenchimento incorreto do E-mail</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="input-container" appearance="outline">
@@ -29,10 +32,12 @@
                         autocomplete="current-password" 
                         formControlName="senha" 
                         matInput placeholder="Digite seu sua senha">
+                        
+                        <mat-error *ngIf="loginForm.get('senha')?.hasError('required')">Preenchimento da senha obrigatório</mat-error>
                     </mat-form-field>
 
                     <mat-card-actions>
-                        <button mat-flat-button color="primary" (click)="acessarConta()">ACESSAR MINHA CONTA</button>
+                        <button [disabled]="loginForm.invalid" mat-flat-button color="primary" (click)="acessarConta()">ACESSAR MINHA CONTA</button>
                     </mat-card-actions>
                     <p>Ainda não possui sua conta? <a ><strong>Clique aqui para se cadastrar!</strong></a></p>
                 </mat-card-content>

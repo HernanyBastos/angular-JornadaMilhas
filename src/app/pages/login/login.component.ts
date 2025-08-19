@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacaoService } from 'src/app/core/services/autenticacao.service';
 
@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
   ) { }
   
   //Ciclo de vida do Angular: ao inicializar o componente, cria o formulário com os campos "email" e "senha"
+  //Criando os Validaores do email e senha para mostrar na tela do usuário
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: [null],
-      senha: [null]
+      email: [null, [Validators.required, Validators.email]],
+      senha: [null, [Validators.required]]
     })
   }
 
