@@ -17,4 +17,8 @@ form = new FormGroup({
     public formBuscarService: FormBuscarService
   ) { }
 
+
+  buscar(){
+    console.log(this.formBuscarService.formBusca.value);
+  }
 }

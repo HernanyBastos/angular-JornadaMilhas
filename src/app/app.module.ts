@@ -19,6 +19,8 @@ import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoiment
 import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
+import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 
 
 // Material Angular
@@ -34,7 +36,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 
 
 
@@ -52,7 +53,8 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
     FormBuscaComponent,
     ModalComponent,
     BotaoControleComponent,
-    DropdownUfComponent
+    DropdownUfComponent,
+    SeletorPassageiroComponent
   ],
   imports: [
     BrowserModule,

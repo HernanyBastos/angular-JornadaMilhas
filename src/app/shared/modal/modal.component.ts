@@ -11,4 +11,8 @@ export class ModalComponent {
 
   constructor(public formBuscarService: FormBuscarService, private dialog: MatDialog) { }
 
+  buscar() {
+    console.log(this.formBuscarService.formBusca.value);
+  }
+
 }

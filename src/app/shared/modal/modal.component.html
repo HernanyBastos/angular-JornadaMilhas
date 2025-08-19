@@ -1,53 +1,26 @@
 <section class="modal">
   <h1 mat-dialog-title>Viajante</h1>
   <div mat-dialog-content>
+
+    <!--Colque o componente de seleção de passageiros nesse trecho -->
     <div class="selecao-idade">
-      <ul>
-        <li><strong>Adultos</strong></li>
-        <li>(Acima de 12 anos)</li>
-        <li>
-          <app-botao-controle operacao="decrementar"></app-botao-controle>
-          <span>1</span>
-          <app-botao-controle operacao="incrementar"></app-botao-controle>
-        </li>
-      </ul>
-      <ul>
-        <li><strong>Crianças</strong></li>
-        <li>(Entre 2 e 11 anos)</li>
-        <li>
-          <app-botao-controle operacao="decrementar"></app-botao-controle>
-          <span>1</span>
-          <app-botao-controle operacao="incrementar"></app-botao-controle>
-        </li>
-      </ul>
-      <ul>
-        <li><strong>Bebês</strong></li>
-        <li>(Até 2 anos)</li>
-        <li>
-          <app-botao-controle operacao="decrementar"></app-botao-controle>
-          <span>1</span>
-          <app-botao-controle operacao="incrementar"></app-botao-controle>
-        </li>
-      </ul>
+      <app-seletor-passageiro [formControl]="formBuscarService.obterControle('adulto')" titulo="Adultos" subtitulo="(Acima de 12 anos)"/>
+      <app-seletor-passageiro [formControl]="formBuscarService.obterControle('crianca')" titulo="Crianças" subtitulo="(Entre 2 e 11 anos)"/>
+      <app-seletor-passageiro [formControl]="formBuscarService.obterControle('bebe')" titulo="Bebês" subtitulo="(Menor de 2 anos)"/>
     </div>
+    <!--Colque o componente de seleção de passageiros nesse trecho -->
+
     <div class="selecao-categoria">
       <p><strong>Categoria</strong></p>
       <mat-chip-listbox aria-label="Seleção de passagens">
-        <mat-chip-option 
-        value="Economica" 
-        [selected]="formBuscarService.formBusca.get('tipo')?.value === 'Econômica'"
-        (selectionChange)="formBuscarService.alterarTipo($event, 'Econômica')"
-        >Econômica</mat-chip-option>
-        <mat-chip-option 
-        value="Executiva" 
-        [selected]="formBuscarService.formBusca.get('tipo')?.value === 'Executiva'"
-        (selectionChange)="formBuscarService.alterarTipo($event, 'Executiva')"
-        >Executiva</mat-chip-option>
+        <mat-chip-option value="Economica" [selected]="formBuscarService.formBusca.get('tipo')?.value === 'Econômica'"
+          (selectionChange)="formBuscarService.alterarTipo($event, 'Econômica')">Econômica</mat-chip-option>
+        <mat-chip-option value="Executiva" [selected]="formBuscarService.formBusca.get('tipo')?.value === 'Executiva'"
+          (selectionChange)="formBuscarService.alterarTipo($event, 'Executiva')">Executiva</mat-chip-option>
       </mat-chip-listbox>
     </div>
   </div>
   <div mat-dialog-actions class="modal-actions">
-    <button color="primary" mat-flat-button mat-dialog-close>BUSCAR</button>
+    <button color="primary" mat-flat-button mat-dialog-close (click)="buscar()">BUSCAR</button>
   </div>
 </section>
-
