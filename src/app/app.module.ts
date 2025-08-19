@@ -36,6 +36,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -54,7 +55,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ModalComponent,
     BotaoControleComponent,
     DropdownUfComponent,
-    SeletorPassageiroComponent
+    SeletorPassageiroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
