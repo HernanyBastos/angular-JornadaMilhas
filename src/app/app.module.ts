@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  HttpClientModule } from '@angular/common/http';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 //Componentes criados 
@@ -37,6 +37,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { LoginComponent } from './pages/login/login.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormBaseComponent } from './shared/form-base/form-base.component';
+import { MatDividerModule  } from '@angular/material/divider';
+
+
+
+
 
 
 
@@ -56,7 +64,8 @@ import { LoginComponent } from './pages/login/login.component';
     BotaoControleComponent,
     DropdownUfComponent,
     SeletorPassageiroComponent,
-    LoginComponent
+    LoginComponent,
+    FormBaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +86,9 @@ import { LoginComponent } from './pages/login/login.component';
     ReactiveFormsModule,
     MatAutocompleteModule,
     FormsModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
